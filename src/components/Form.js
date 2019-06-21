@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+
 
 function Form() {
 
@@ -17,17 +18,20 @@ function Form() {
         headers: {
             'Content-Type': 'application/json',
         }
+       
     })
-   }
+    
+
+   };
    
 
     console.log(name, breed, email)
     return (
        
     <div className="App">
-      <Link to="/cats">Cats</Link>
+      <a href="/cats">Cats</a>
       <br />
-      <Link to="/">Home</Link>
+      <a href="/">Home</a>
       <br />
       <p>Form</p>
       <form onSubmit={e => handleSubmit(e,)}>

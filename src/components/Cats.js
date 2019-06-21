@@ -21,6 +21,8 @@ function Cats() {
     setName(cat.name);
     setBreed(cat.breed);
     setEmail(cat.email);
+    
+   
   };
 
   const handleEdit = async (e, id) => {
@@ -37,7 +39,8 @@ function Cats() {
   const handleDelete = async id => {
     await fetch("http://localhost:4000/" + id, {
       method: "DELETE"
-    });
+    })
+    
   };
 
   console.log(cats, name, breed);
