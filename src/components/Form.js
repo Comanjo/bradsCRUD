@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import { Redirect } from "react-router-dom";
+
 
 
 function Form() {
 
-    const [name, setName] = useState("");
-    const [breed, setBreed] = useState("");
-    const [email, setEmail] = useState("");
+    const [name, setName] = useState("")
+    const [breed, setBreed] = useState("")
+    const [email, setEmail] = useState("")
 
 
    const handleSubmit = async (e) => {
@@ -14,7 +14,7 @@ function Form() {
     const data = JSON.stringify({name,breed,email})
     await fetch("http://localhost:4000" , {
         method: "POST",
-        body: data ,
+        body: data,
         headers: {
             'Content-Type': 'application/json',
         }
@@ -34,7 +34,7 @@ function Form() {
       <a href="/">Home</a>
       <br />
       <p>Form</p>
-      <form onSubmit={e => handleSubmit(e,)}>
+      <form onSubmit={e => handleSubmit(e)}>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Name</label>
           <input
@@ -79,3 +79,13 @@ function Form() {
 }
 
 export default Form;
+
+
+
+
+
+
+
+
+
+

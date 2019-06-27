@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 function Cats() {
   const [cats, setCats] = useState([]);
@@ -21,8 +21,6 @@ function Cats() {
     setName(cat.name);
     setBreed(cat.breed);
     setEmail(cat.email);
-    
-   
   };
 
   const handleEdit = async (e, id) => {
@@ -39,8 +37,7 @@ function Cats() {
   const handleDelete = async id => {
     await fetch("http://localhost:4000/" + id, {
       method: "DELETE"
-    })
-    
+    });
   };
 
   console.log(cats, name, breed);
@@ -137,7 +134,7 @@ function Cats() {
           <button
             type="button"
             class="btn btn-danger"
-            onClick={e => handleDelete(cat._id)}
+            onClick={e => handleDelete(cat.id)}
           >
             Delete
           </button>
